@@ -11,7 +11,7 @@ function DeleteList(props) {
     return (
         <>
             <div key={props.id}>
-                <button onClick={() => deleteShoppingItem(props.id)} className='deleter'>Delete</button>
+                <button onClick={() => deleteShoppingItem(props.id)} class='deleter'>Delete</button>
             </div>
         </>
     )
