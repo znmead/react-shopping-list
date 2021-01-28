@@ -37,7 +37,7 @@ getShoppingList = function to display itemArray.
 
 function App() {
 
-    const [shoppingList, SetShoppingList] = useState([]);
+    const [shoppingList, setShoppingList] = useState([]);
 
     const fetchItems = () => {
         axios({
