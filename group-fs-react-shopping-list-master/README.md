@@ -19,4 +19,5 @@ PUT
 
 Unassigned:
 Reset and Clear buttons and functions.
--The Reset button should clear the purchased status from all items, allowing the list to be re-used. The Clear button should remove all items from the list, deleting them from the database.
+-The Reset button should clear the purchased status from all items, allowing the list to be re-used. 
+-The Clear button should remove all items from the list, deleting them from the database.
