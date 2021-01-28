@@ -12,7 +12,6 @@ function ShoppingList({ shoppingList }) {
     // return some JSX for EVERY item in the itemList
  
 
-
     return (
         <>
         {shoppingList.map((item) => 
