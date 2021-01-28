@@ -21,7 +21,7 @@ function ShoppingListItem({ itemList, itemDelete }) {
             <h2>{item.itemUnit}</h2>
             <p>Unit: {item.unit}</p>
 
-            <button onClick={() => itemList(item.id)Purchase</button>
+            <button onClick={() => itemList(item.id)}>Purchase</button>
             <button onClick={() => itemDelete(item.id)(item)}>Delete</button>
 
         </div>

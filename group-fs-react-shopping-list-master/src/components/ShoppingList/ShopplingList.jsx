@@ -1,6 +1,6 @@
 // This is the GET display
 
-import ShoppingListItem from '../ShoppingListItem';
+import ShoppingListItem from './ShoppingListItem';
 
 function ShoppingList(props) {
 
