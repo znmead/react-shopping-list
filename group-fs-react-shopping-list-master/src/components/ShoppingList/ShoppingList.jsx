@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './ShoppingList.css';
+
 // This is the GET display
 
 
-function ShoppingList({ shoppingList }) {
+function ShoppingList({ shoppingList, setPurchase, deletePurchase }) {
 
 
     // put our list of items on the DOM
@@ -24,8 +26,8 @@ function ShoppingList({ shoppingList }) {
 
             <p>Unit: {item.unit}</p>
 
-           {/* <button onClick={() => shoppingList(item.id)}>Purchase</button>*
-            <button onClick={() => deleteShoppingItem(props.id)} class='deleter'> Delete </button>*/}
+            <button onClick={(event) => {setPurchase}}>Purchase</button>
+            <button onClick={() => {deletePurchase}} class='deleter'> Delete </button>
         </div>
         )}
         </>
