@@ -1,6 +1,6 @@
 To do List: 
 
-Add an Item (Sets up POST route and input form, submit button, adds values of the inputs to database when save is pushed) : Lance
+Add an Item (Sets up POST route and input form, submit button, adds values of the inputs to database when save is pushed) : Lance --DONE
 
 
 Shopping List Display ( set up GET route, displays name, quantity, unit and buttons ("Buy" and "Remove") onto DOM )
