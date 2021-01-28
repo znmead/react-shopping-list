@@ -1,7 +1,8 @@
 import React from 'react';
-import axios from 'axios';
+
 import Header from '../Header/Header.jsx'
 import './App.css';
+import AddItem from '../AddItem/AddItem'
 
 /* Hooks and definitions:
 const [shopItem, postShoppingList] useState('');
@@ -18,6 +19,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                <AddItem />
                 <p>Under Construction...</p>
             </main>
         </div>
