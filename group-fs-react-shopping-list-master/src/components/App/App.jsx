@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
@@ -31,6 +32,28 @@ getShoppingList = function to display itemArray.
 
 
 function App() {
+
+    const [shoppingList, setShoppingList] = useState([]);
+
+    const fetchItems = () => {
+        axios({
+            method: 'GET',
+            url: '/list'
+        }).then((response) => {
+            console.log(response.data);
+            setShoppingList(response.data);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        fetchItems();
+    }, []);
+
+    console.log('Rendering App'); 
+
+
     return (
         <div className="App">
             <Header />
@@ -38,6 +61,7 @@ function App() {
                 <AddItem />
                 <ShoppingList />
                 <p>Under Construction...</p>
+                <ShoppingList shoppingList={shoppingList} />
             </main>
         </div>
     );
