@@ -1,5 +1,9 @@
 // Node Module that will connect to postgesql
+//const { config } = require('dotenv/types');
 const pg = require('pg');
+//require('dotenv').config();
+console.log(process.env.DB_USERNAME);
+
 
 // Setup PG to connect to the database
 const Pool = pg.Pool;
@@ -7,6 +11,8 @@ const Pool = pg.Pool;
 const pool = new Pool({
     database: 'fs-react-shopping', // database name (this will change)
     host: 'localhost', // where to find the database
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
     port: 5432,        // port for finding the database
     max: 10,           // max number of connections for the pool
     idleTimeoutMillis: 30000 // 30 seconds before timeout/cancel query
