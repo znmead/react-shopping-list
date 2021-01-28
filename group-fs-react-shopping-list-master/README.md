@@ -1,9 +1,21 @@
-# React Shopping List
+To do List: 
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Add an Item (Sets up POST route and input form, submit button, adds values of the inputs to database when save is pushed)
 
-## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Shopping List Display ( set up GET route, displays name, quantity, unit and buttons ("Buy" and "Remove") onto DOM )
+-Items should initially appear alphabetically, but as items are marked purchased they should sort to the end of the list.
+
+
+PUT 
+
+
+
+DELETE
+
+
+
+
+Unassigned:
+Reset and Clear buttons and functions.
