@@ -2,4 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+ background-color: #AAF0D1;
+  color: #AF6E4D;
+}
+
+
+header {
+  background-color: #CCFF00;
+    color: #AF6E4D;
+
+}
+
+button {
+    background-color: #A57164;
+      color: #757575;
+      border-radius: 5px;
+
 }
