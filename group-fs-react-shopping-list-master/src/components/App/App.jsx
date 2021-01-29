@@ -7,6 +7,7 @@ import AddItem from '../AddItem/AddItem'
 import DeleteList from  '../DeleteList/DeleteList.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import ResetItems from '../ResetItems/ResetItems.jsx';
+import ClearAll from '../ClearAll/ClearAll.jsx'
 
 /* Hooks and definitions:
 const [shopItem, postShoppingList] = useState('');
@@ -66,6 +67,7 @@ function App() {
                 <AddItem fetchItems={fetchItems}/>
                 <p>Under Construction...</p>
                 <ResetItems changeStatus={changeStatus}/>
+                <ClearAll fetchItems={fetchItems}/>
                 <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus} fetchItems={fetchItems}/>
             </main>
         </div>
