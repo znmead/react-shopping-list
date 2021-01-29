@@ -1,4 +1,5 @@
 const express = require('express');
+const { query } = require('../modules/pool.js');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
@@ -45,14 +46,27 @@ router.post('/', (req, res) => {
 router.put('/', (req, res) => {
     let id = req.body.id;
     console.log('changing item with ID of: ', id);
-    const queryText = `UPDATE "list" SET "purchased" = true WHERE id = $1;`;
-    pool.query(queryText, [id]).then(result => {
+    let queryText = ''
+    if (id === 'all'){
+        queryText = `UPDATE "list" SET "purchased" = false WHERE "purchased" = true;`
+        pool.query(queryText).then(result => {
+            console.log('Successfully updated all items')
+            res.sendStatus(200);
+        }).catch(error => {
+            console.log(`Error updating item`, error);
+            res.sendStatus(500);
+        });
+    }
+    else {
+     queryText = `UPDATE "list" SET "purchased" = true WHERE id = $1;`;
+     pool.query(queryText, [id]).then(result => {
         console.log('Successfully updated item')
         res.sendStatus(200);
     }).catch(error => {
         console.log(`Error updating item`, error);
         res.sendStatus(500);
     });
+    }
 });
 
 

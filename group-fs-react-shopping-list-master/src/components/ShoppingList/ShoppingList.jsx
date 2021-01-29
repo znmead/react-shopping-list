@@ -26,6 +26,8 @@ function ShoppingList({ shoppingList, changeStatus, deletePurchase }) {
 
             <p>Unit: {item.unit}</p>
 
+            <p>{(item.purchased ? 'PURCHASED' : 'Not Purchased')}</p>
+
             <button id={item.id} onClick={(event) => {changeStatus(event.target.id)}}>Purchase</button>
             <button onClick={() => {deletePurchase}} className='deleter'> Delete </button>
         </div>

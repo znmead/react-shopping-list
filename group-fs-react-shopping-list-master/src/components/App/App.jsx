@@ -6,6 +6,7 @@ import './App.css';
 import AddItem from '../AddItem/AddItem'
 import DeleteList from  '../DeleteList/DeleteList.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
+import ResetItems from '../ResetItems/ResetItems.jsx';
 
 /* Hooks and definitions:
 const [shopItem, postShoppingList] = useState('');
@@ -73,6 +74,7 @@ function App() {
             <main>
                 <AddItem />
                 <p>Under Construction...</p>
+                <ResetItems changeStatus={changeStatus}/>
                 <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus}/>
             </main>
         </div>
