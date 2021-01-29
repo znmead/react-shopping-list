@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
 
-function AddItem() {
+function AddItem({fetchItems}) {
     const [nameInput, setNameInput] = useState('');
     const [quantityInput, setQuantityInput] = useState('');
     const [unitInput, setUnitInput] = useState('');
@@ -27,6 +27,7 @@ function AddItem() {
             setNameInput('');
             setQuantityInput('');
             setUnitInput('');
+            fetchItems();
         })
     }
 
