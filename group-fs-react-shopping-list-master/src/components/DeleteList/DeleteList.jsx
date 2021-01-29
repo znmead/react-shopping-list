@@ -12,9 +12,13 @@ function DeleteList( props) {
 
     const deletePurchase = (props) => {
         console.log('Deleter Clicked')
+      //  console.log(data.id);
         axios({
             method: 'DELETE',
-            url: `/list/${id}`,
+            url: `/list/`,
+            data:{
+            id: this.shoppingList.id
+        }
         }).then((response) => {
             console.log(response)
             fetchItems();
