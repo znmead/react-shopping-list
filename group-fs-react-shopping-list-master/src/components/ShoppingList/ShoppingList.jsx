@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ShoppingList.css';
 import DeleteList from '../DeleteList/DeleteList.jsx';
-
+import GimmeButtons from '../GimmeButtons/GimmeButtons'
 // This is the GET display
 
 
 function ShoppingList({ shoppingList, changeStatus, fetchItems }) {
+
+    const [ispurchased, setIsPurchased] = useState (false);
 
     // put our list of items on the DOM
     // JS
@@ -14,7 +16,13 @@ function ShoppingList({ shoppingList, changeStatus, fetchItems }) {
     // return some JSX for EVERY item in the itemList
     // const [array, deletePurchase] = useState();
 
-
+const checkPurchase = (purchase, itemId) => {
+    if (purchase){
+    return <p>PURCHASED</p>;
+    } else{
+        return <GimmeButtons id={itemId}shoppingList={shoppingList} changeStatus={changeStatus} fetchItems={fetchItems}/>
+    }
+}
 
 
     return (
@@ -29,11 +37,8 @@ function ShoppingList({ shoppingList, changeStatus, fetchItems }) {
 
             <p>Unit: {item.unit}</p>
 
-            <p>{(item.purchased ? 'PURCHASED' : 'Not Purchased')}</p>
-
-            <button id={item.id} onClick={(event) => {changeStatus(event.target.id)}}>Purchase</button>
-            <DeleteList itemId={item.id} fetchItems={fetchItems}/>  
-
+            {checkPurchase(item.purchased, item.id)}
+            
         </div>
         )}
         </>
