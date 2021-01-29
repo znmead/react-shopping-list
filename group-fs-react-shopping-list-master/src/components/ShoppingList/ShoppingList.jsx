@@ -29,7 +29,6 @@ function ShoppingList({ shoppingList, changeStatus, fetchItems }) {
 
             <p>Unit: {item.unit}</p>
 
-            <button onClick={(event) => {setPurchase}}>Purchase</button>
             <p>{(item.purchased ? 'PURCHASED' : 'Not Purchased')}</p>
 
             <button id={item.id} onClick={(event) => {changeStatus(event.target.id)}}>Purchase</button>
