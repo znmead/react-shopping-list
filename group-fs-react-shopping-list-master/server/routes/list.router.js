@@ -74,7 +74,19 @@ router.put('/', (req, res) => {
 router.delete('/', (req, res) => {
     let id = req.body.id;
     console.log('Delete router called with id of', id);
-    const queryText = `DELETE FROM "list" WHERE id = $1;`;
+    let queryText = '';
+    if (id === 'all'){
+        queryText = 'TRUNCATE TABLE "list";';
+        pool.query(queryText).then(result => {
+            console.log('Successfully removed list item')
+            res.sendStatus(204);
+        }).catch(error => {
+            console.log(`Error deleting item`, error);
+            res.sendStatus(500);
+        });
+    } 
+    else {
+    queryText= `DELETE FROM "list" WHERE id = $1;`;
     pool.query(queryText, [id]).then(result => {
         console.log('Successfully removed list item')
         res.sendStatus(204);
@@ -82,6 +94,7 @@ router.delete('/', (req, res) => {
         console.log(`Error deleting item`, error);
         res.sendStatus(500);
     });
+}
 });
 
 
