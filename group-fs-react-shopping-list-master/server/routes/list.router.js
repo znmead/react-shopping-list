@@ -71,8 +71,8 @@ router.put('/', (req, res) => {
 
 
 // DELETE URL list/id
-router.delete('/:id', (req, res) => {
-    let id = req.params.id;
+router.delete('/', (req, res) => {
+    let id = req.body.id;
     console.log('Delete router called with id of', id);
     const queryText = `DELETE FROM "list" WHERE id = $1;`;
     pool.query(queryText, [id]).then(result => {

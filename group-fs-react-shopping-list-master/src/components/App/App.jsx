@@ -17,19 +17,7 @@ itemArray = array of shopItem (s)
 getShoppingList = function to display itemArray.
 
 */
-// const [itemArray, deleteShoppingItem] = useState();
 
-// const deleteShoppingItem = (itemId) => {
-//     console.log('Deleter Clicked')
-//     axios({
-//         method: 'DELETE',
-//         url: `/list/${id}`,
-//     }).then((response) => {
-//         console.log(response)
-//         getShoppingList();
-
-//     })
-// }
 
 
 function App() {
@@ -63,6 +51,9 @@ function App() {
         fetchItems();
     }, []);
 
+
+
+
     console.log('Rendering App'); 
 
 
@@ -75,7 +66,7 @@ function App() {
                 <AddItem />
                 <p>Under Construction...</p>
                 <ResetItems changeStatus={changeStatus}/>
-                <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus}/>
+                <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus} fetchItems={fetchItems}/>
             </main>
         </div>
     );
