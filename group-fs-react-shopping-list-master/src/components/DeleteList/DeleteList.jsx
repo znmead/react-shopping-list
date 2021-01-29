@@ -2,16 +2,33 @@
 import React from 'react';
 import axios from 'axios';
 
+// going to need to feed this into ShoppingList and replace the delete button with this dependancy
+//  <button onClick={() => deleteShoppingItem(props.id)} class='deleter'>Delete</button>
+
 //function StudentList({studentList , deleteStudent}) {
 
-function DeleteList(props) {
+function DeleteList( props) {
+
+
+    const deletePurchase = (props) => {
+        console.log('Deleter Clicked')
+        axios({
+            method: 'DELETE',
+            url: `/list/${id}`,
+        }).then((response) => {
+            console.log(response)
+            fetchItems();
+
+        })
+    }
 
 
 
     return (
         <>
             <div key={props.id}>
-                <button onClick={() => deleteShoppingItem(props.id)} class='deleter'>Delete</button>
+                <button onClick={(event) => deletePurchase(props.id)} className="deleter" > Delete </button>  
+
             </div>
         </>
     )
@@ -21,4 +38,4 @@ function DeleteList(props) {
 export default DeleteList;
 
 
-//
+

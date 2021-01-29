@@ -4,7 +4,6 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
 import AddItem from '../AddItem/AddItem'
-import DeleteList from '../DeleteList/DeleteList.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 
 
@@ -44,19 +43,7 @@ function App() {
     }, []);
 
 
-   // const [array, deletePurchase] = useState();
 
-    const deletePurchase = () => {
-        console.log('Deleter Clicked')
-        axios({
-            method: 'DELETE',
-            url: `/list/${id}`,
-        }).then((response) => {
-            console.log(response)
-            getShoppingList();
-
-        })
-    }
 
     console.log('Rendering App'); 
 

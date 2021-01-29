@@ -1,17 +1,21 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ShoppingList.css';
+import DeleteList from '../DeleteList/DeleteList.jsx';
 
 // This is the GET display
 
 
-function ShoppingList({ shoppingList, setPurchase, deletePurchase }) {
+function ShoppingList({ shoppingList, setPurchase }) {
 
 
     // put our list of items on the DOM
     // JS
     // let listItems = shoppingList.map((item) => {}
     // return some JSX for EVERY item in the itemList
+    // const [array, deletePurchase] = useState();
+
+
 
     return (
         <>
@@ -26,7 +30,7 @@ function ShoppingList({ shoppingList, setPurchase, deletePurchase }) {
             <p>Unit: {item.unit}</p>
 
             <button onClick={(event) => {setPurchase}}>Purchase</button>
-            <button onClick={(event) => deletePurchase(shoppingList.id)} className="deleter" > Delete </button>  
+            <DeleteList/>  
         </div>
         )}
         </>
