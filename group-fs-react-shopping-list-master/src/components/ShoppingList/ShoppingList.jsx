@@ -6,7 +6,7 @@ import DeleteList from '../DeleteList/DeleteList.jsx';
 // This is the GET display
 
 
-function ShoppingList({ shoppingList, changeStatus, deletePurchase }) {
+function ShoppingList({ shoppingList, changeStatus, fetchItems }) {
 
     // put our list of items on the DOM
     // JS
@@ -33,7 +33,7 @@ function ShoppingList({ shoppingList, changeStatus, deletePurchase }) {
             <p>{(item.purchased ? 'PURCHASED' : 'Not Purchased')}</p>
 
             <button id={item.id} onClick={(event) => {changeStatus(event.target.id)}}>Purchase</button>
-                <DeleteList />  
+            <DeleteList itemId={item.id} fetchItems={fetchItems}/>  
 
         </div>
         )}

@@ -66,7 +66,7 @@ function App() {
                 <AddItem />
                 <p>Under Construction...</p>
                 <ResetItems changeStatus={changeStatus}/>
-                <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus}/>
+                <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus} fetchItems={fetchItems}/>
             </main>
         </div>
     );

@@ -7,17 +7,17 @@ import axios from 'axios';
 
 //function StudentList({studentList , deleteStudent}) {
 
-function DeleteList( props) {
+function DeleteList({ itemId, fetchItems}) {
 
 
-    const deletePurchase = (props) => {
+    const deletePurchase = (itemId) => {
         console.log('Deleter Clicked')
       //  console.log(data.id);
         axios({
             method: 'DELETE',
             url: `/list/`,
             data:{
-            id: this.shoppingList.id
+            id: itemId
         }
         }).then((response) => {
             console.log(response)
@@ -30,10 +30,7 @@ function DeleteList( props) {
 
     return (
         <>
-            <div key={props.id}>
-                <button onClick={(event) => deletePurchase(props.id)} className="deleter" > Delete </button>  
-
-            </div>
+          <button onClick={(event) => deletePurchase(itemId)} className="deleter" > Delete </button>  
         </>
     )
 }
