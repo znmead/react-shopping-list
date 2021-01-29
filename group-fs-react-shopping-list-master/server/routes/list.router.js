@@ -42,6 +42,18 @@ router.post('/', (req, res) => {
 })
 
 // PUT - URL list
+router.put('/', (req, res) => {
+    let id = req.body.id;
+    console.log('changing item with ID of: ', id);
+    const queryText = `UPDATE "list" SET "purchased" = true WHERE id = $1;`;
+    pool.query(queryText, [id]).then(result => {
+        console.log('Successfully updated item')
+        res.sendStatus(200);
+    }).catch(error => {
+        console.log(`Error updating item`, error);
+        res.sendStatus(500);
+    });
+});
 
 
 // DELETE URL list/id

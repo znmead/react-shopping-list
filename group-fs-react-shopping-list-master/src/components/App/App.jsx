@@ -5,7 +5,7 @@ import Header from '../Header/Header.jsx'
 import './App.css';
 import AddItem from '../AddItem/AddItem'
 import DeleteList from  '../DeleteList/DeleteList.jsx';
-import ShoppingList from '../ShoppingList/ShopplingList';
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 
 /* Hooks and definitions:
 const [shopItem, postShoppingList] = useState('');
@@ -47,6 +47,17 @@ function App() {
         })
     }
 
+    const changeStatus = (itemId) => {
+        console.log(`button pressed! with id`, itemId);
+        axios.put('/list/',{id: itemId}
+        ).then ((response) => {
+            fetchItems();
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
     useEffect(() => {
         fetchItems();
     }, []);
@@ -54,14 +65,15 @@ function App() {
     console.log('Rendering App'); 
 
 
+
+
     return (
         <div className="App">
             <Header />
             <main>
                 <AddItem />
-                <ShoppingList />
                 <p>Under Construction...</p>
-                <ShoppingList shoppingList={shoppingList} />
+                <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus}/>
             </main>
         </div>
     );
