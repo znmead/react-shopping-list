@@ -5,8 +5,7 @@ import './ShoppingList.css';
 // This is the GET display
 
 
-function ShoppingList({ shoppingList, setPurchase, deletePurchase }) {
-
+function ShoppingList({ shoppingList, changeStatus, deletePurchase }) {
 
     // put our list of items on the DOM
     // JS
@@ -14,9 +13,10 @@ function ShoppingList({ shoppingList, setPurchase, deletePurchase }) {
     // return some JSX for EVERY item in the itemList
  
 
+
     return (
         <>
-        {shoppingList.map((item) => 
+        {shoppingList.map(item => 
         <div key={item.id}className="items"> 
             {/* {JSON.stringify(props)} */}
             
@@ -26,8 +26,10 @@ function ShoppingList({ shoppingList, setPurchase, deletePurchase }) {
 
             <p>Unit: {item.unit}</p>
 
-            <button onClick={(event) => {setPurchase}}>Purchase</button>
-            <button onClick={() => {deletePurchase}} class='deleter'> Delete </button>
+            <p>{(item.purchased ? 'PURCHASED' : 'Not Purchased')}</p>
+
+            <button id={item.id} onClick={(event) => {changeStatus(event.target.id)}}>Purchase</button>
+            <button onClick={() => {deletePurchase}} className='deleter'> Delete </button>
         </div>
         )}
         </>
