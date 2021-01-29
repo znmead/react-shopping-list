@@ -1,4 +1,4 @@
-# PROJECT NAME
+# POD1 React Shopping List
 
 POD 1 React Shopping List built by Lance, Jon, and Zach.
 
