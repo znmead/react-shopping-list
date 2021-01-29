@@ -65,7 +65,7 @@ function App() {
             <Header />
             <main>
                 <AddItem fetchItems={fetchItems}/>
-                <p>Under Construction...</p>
+                <p>This is your shopping list!</p>
                 <ResetItems changeStatus={changeStatus}/>
                 <ClearAll fetchItems={fetchItems}/>
                 <ShoppingList shoppingList={shoppingList} changeStatus={changeStatus} fetchItems={fetchItems}/>
