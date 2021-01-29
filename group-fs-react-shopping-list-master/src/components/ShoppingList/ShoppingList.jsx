@@ -20,7 +20,7 @@ const checkPurchase = (purchase, itemId) => {
     if (purchase){
     return <p>PURCHASED</p>;
     } else{
-        return <GimmeButtons id={itemId}shoppingList={shoppingList} changeStatus={changeStatus} fetchItems={fetchItems}/>
+        return <GimmeButtons id={itemId} changeStatus={changeStatus} fetchItems={fetchItems}/>
     }
 }
 

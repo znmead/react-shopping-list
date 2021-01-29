@@ -1,6 +1,6 @@
 import DeleteList from '../DeleteList/DeleteList.jsx'
 
-function GimmeButtons({ id, shoppingList, changeStatus, fetchItems }) {
+function GimmeButtons({ id, changeStatus, fetchItems }) {
 
     return (
         <>
