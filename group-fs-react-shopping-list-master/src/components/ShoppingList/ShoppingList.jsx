@@ -6,8 +6,7 @@ import DeleteList from '../DeleteList/DeleteList.jsx';
 // This is the GET display
 
 
-function ShoppingList({ shoppingList, setPurchase }) {
-
+function ShoppingList({ shoppingList, changeStatus, deletePurchase }) {
 
     // put our list of items on the DOM
     // JS
@@ -17,9 +16,10 @@ function ShoppingList({ shoppingList, setPurchase }) {
 
 
 
+
     return (
         <>
-        {shoppingList.map((item) => 
+        {shoppingList.map(item => 
         <div key={item.id}className="items"> 
             {/* {JSON.stringify(props)} */}
             
@@ -30,7 +30,11 @@ function ShoppingList({ shoppingList, setPurchase }) {
             <p>Unit: {item.unit}</p>
 
             <button onClick={(event) => {setPurchase}}>Purchase</button>
-            <DeleteList/>  
+            <p>{(item.purchased ? 'PURCHASED' : 'Not Purchased')}</p>
+
+            <button id={item.id} onClick={(event) => {changeStatus(event.target.id)}}>Purchase</button>
+                <DeleteList />  
+
         </div>
         )}
         </>
